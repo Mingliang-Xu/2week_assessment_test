@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: 'pepperoni',
+    price: 16.99,
+    category: 'main',
+    popuarity: 80,
+    rating: 4.5,
+    tag: ['protein', 'dairy', 'comes with a drink']
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+console.log(pizza.popuarity);
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +62,7 @@
 
 //CODE HERE
 
+console.log(pizza.tag[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,6 +72,12 @@
 */
 
 //CODE HERE
+
+let {price} = pizza;
+
+pizza.price -= 5;
+
+console.log(pizza);
 
 
 /*
@@ -74,6 +89,9 @@
 
 //CODE HERE
 
+let {category} = pizza;
+
+console.log(pizza.category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,6 +107,49 @@
 
 //CODE HERE
 
+const foodArr =[
+    {
+        name: 'pizza',
+        price: 16.99,
+        category: 'main',
+        popuarity: 80,
+        rating: 4.5,
+        tag: ['protein', 'dairy', 'comes with a drink']
+    },
+    {
+        name: 'burger',
+        price: 14.99,
+        category: 'fast food',
+        popuarity: 75,
+        rating: 4,
+        tag: ['beef', 'onion', 'comes with a drink']
+    },
+    {
+        name: 'greek salad',
+        price: 9.99,
+        category: 'entree',
+        popuarity: 70,
+        rating: 3.5,
+        tag: ['green', 'healthy']
+    },
+    {
+        name: 'fried rice',
+        price: 13.99,
+        category: 'main',
+        popuarity: 85,
+        rating: 4.5,
+        tag: ['carbs', 'hot', 'spicy']
+    },
+    {
+        name: 'fish',
+        price: 20.99,
+        category: 'specialty',
+        popuarity: 90,
+        rating: 5,
+        tag: ['protein', 'fresh', 'complentary white wine']
+    }
+    
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +166,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter(element => element.tag.includes('protein'));
+console.log(filteredFood);
 
 
 //////////////////PROBLEM 5////////////////////
@@ -150,6 +211,17 @@
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+
+    if(type === 'above'){
+        return foodArr.filter(element => element.property > number);
+    }
+
+   if(type === 'below'){
+        return foodArr.filter(element => element.property < number );
+   }
+
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +231,7 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty('rating', 4, 'below'));
+
+
