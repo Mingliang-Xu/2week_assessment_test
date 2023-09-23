@@ -75,9 +75,7 @@ console.log(pizza.tag[1]);
 
 let {price} = pizza;
 
-pizza.price -= 5;
-
-console.log(pizza);
+console.log(price);
 
 
 /*
