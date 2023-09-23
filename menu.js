@@ -211,16 +211,18 @@ console.log(filteredFood);
 
 //CODE HERE
 
+let filteredResult;
+
 const filterByProperty = (property, number, type) => {
 
     if(type === 'above'){
-        return foodArr.filter(element => element.property > number);
+        filteredResult = foodArr.filter(element => element[property] > number);
     }
 
    if(type === 'below'){
-        return foodArr.filter(element => element.property < number );
+        filteredResult = foodArr.filter(element => element[property] < number );
    }
-
+   return filteredResult;
 }
 
 /*
